@@ -9,15 +9,19 @@ def init(app):
         text = message.text.split(' ', maxsplit = 1)
         music_name = text[1]
 
+        music_name = music_name.replace(' ', '+')
+
         response = 'ㅤ'
 
         music_finder.HitmoParser.__init__(music_finder.HitmoParser)
         music_finder.HitmoParser.find_song(music_finder.HitmoParser, music_name)
-        music_finder.HitmoParser.get_songs(music_finder.HitmoParser, music_finder.HitmoParser.res_link)
+        tracks = music_finder.HitmoParser.get_songs(music_finder.HitmoParser, music_finder.HitmoParser.res_link)        
 
-        for i in range(0, 25):
+        lenght = len(tracks) < 10 and len(tracks) or 10
 
-            track = music_finder.HitmoParser.track_list[i]
+        for i in range(0, lenght):
+
+            track = tracks[i]
 
             response = response + '\n<b>🎤 ' + track['title'] + '</b>' + '\n' + '<b> 🗣' + track['artist'] + '</b>' + '\n' + '<b>' + track['download_link'] + '</b>\n'
     
