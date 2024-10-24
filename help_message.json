@@ -1,0 +1,10 @@
+{
+    "main_title" : "🎧 This module uses the bs4 library to parse websites and get a direct link to download music.",
+    "commands_title" : "🪄 Available commands:",
+    "commands" : {
+
+        "search {music_name}" : {"comment" : "Translating your message"}
+
+    }
+
+}
