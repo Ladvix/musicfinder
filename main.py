@@ -6,7 +6,7 @@ def init(app):
     @app.on_message(filters.command('search', prefixes = '.') & filters.me)
     def _(client, message):
 
-        text = message.text.split(' ', maxsplit = 2)
+        text = message.text.split(' ', maxsplit = 1)
         music_name = text[1]
 
         response = 'ㅤ'
